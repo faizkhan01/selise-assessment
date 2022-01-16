@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let item of data.results | paginate: { itemsPerPage: 3, currentPage: p }">
+    <h2 class="card-title"> <b> {{item.name}} </b> </h2>
+    <a href={{item.link}} class="card-link mb-2"> {{item.link}} </a>
+    <p class="card-text"> {{item.bio}} </p>
+    <!-- <a href="#" class="card-link">Card link</a> -->
+    <!-- <a href="#" class="card-link">Add Favourite</a> -->
+    <button type="button" class="btn btn-primary"> Remove Favourite </button>
+    </div>
+    <pagination-controls (pageChange)="p = $event"> </pagination-controls>
+  </div>
+</div>

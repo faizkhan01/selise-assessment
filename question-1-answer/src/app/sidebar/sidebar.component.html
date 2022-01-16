@@ -1,0 +1,19 @@
+<ng-sidebar-container>
+
+  <!-- A sidebar -->
+  <ng-sidebar [(opened)]="opened">
+    <h1>Author Management App</h1>
+    <button (click)="toggleSidebar()"> Close Sidebar </button>
+    <ul class='menu'>
+      <li> <a routerLink="/authors" (click)="toggleSidebar()"> Authors </a> </li>
+      <li> <a routerLink="/favouriteAuthors" (click)="toggleSidebar()"> Favourite Authors </a> </li>
+    </ul>
+  </ng-sidebar>
+
+  <!-- Page content -->
+  <div ng-sidebar-content>
+    <button (click)="toggleSidebar()">Open Sidebar</button>
+    <router-outlet></router-outlet>
+  </div>
+
+</ng-sidebar-container>
